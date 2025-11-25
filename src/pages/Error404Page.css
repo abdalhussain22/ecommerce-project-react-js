@@ -1,0 +1,15 @@
+.error-image{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-heading {
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
