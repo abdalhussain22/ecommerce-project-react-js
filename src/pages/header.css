@@ -41,7 +41,6 @@
 .header .logo {
   height: 26px;
   margin-top: 1px;
-
 }
 
 .header .mobile-logo {
@@ -149,10 +148,10 @@
   text-align: center;
 }
 
-.logoName{
+/* .logoName{
     color: rgb(55, 243, 3);
     font-weight: bold;
     font-size: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-}
+    text-decoration: none;
+} */
