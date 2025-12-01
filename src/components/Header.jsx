@@ -4,13 +4,10 @@ import logoWhite from '../assets/images/logo-white.png';
 import MobileLogoWhite from '../assets/images/mobile-logo-white.png';
 import SearchIcon from '../assets/images/icons/search-icon.png';
 import CartIcon from '../assets/images/icons/cart-icon.png';
+import { getCartItemQuantity } from '../utils/getCartItemsQuantity';
 
 export function Header({cart}) {
-    let totalCartQuantity = 0;
-
-    cart.forEach((cartItems) => {
-      totalCartQuantity += cartItems.quantity;
-    });
+  let totalCartQuantity = getCartItemQuantity(cart);
 
   return (
     <>

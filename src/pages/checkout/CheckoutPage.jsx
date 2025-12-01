@@ -4,10 +4,13 @@ import { CheckoutHeader } from "./CheckoutHeader";
 import { OrderSummary } from "./OrderSummary";
 import { PaymentSummary } from "./PaymentSummary";
 import "./CheckoutPage.css";
+import { getCartItemQuantity } from "../../utils/getCartItemsQuantity";
 
 export function Checkout({ cart }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState(null);
+
+  let totalCartQuantity = getCartItemQuantity(cart);
 
   useEffect(() => {
     const fetchCheckoutData = async () =>{
@@ -26,7 +29,7 @@ export function Checkout({ cart }) {
     <>
       <link rel="icon" type="image/svg+xml" href="/cart-favicon.png" />
       <title>Checkout Items</title>
-      <CheckoutHeader />
+      <CheckoutHeader totalCartQuantity={totalCartQuantity}/>
 
       <div className="checkout-page">
         <div className="page-title">Review your order</div>
