@@ -20,6 +20,7 @@ function App() {
       loadCart();
     },[])
 
+    window.axios = axios; // when we try axios.post('/api/reset') in console . this line will reset the cart to defualt values.
   return (
     <>
       <Routes>
