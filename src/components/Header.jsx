@@ -29,7 +29,7 @@ export function Header({cart}) {
       break;
     }
   }
-  
+
   let totalCartQuantity = getCartItemQuantity(cart);
   return (
     <>
@@ -43,9 +43,9 @@ export function Header({cart}) {
         </div>
 
         <div className="middle-section">
-          <input className="search-bar" type="text" placeholder="Search" value={search} onChange={updateSearchInput} onKeyDown={searchOnKeyPress}/>
+          <input className="search-bar" type="text" placeholder="Search Items Here" value={search} onChange={updateSearchInput} onKeyDown={searchOnKeyPress}/>
 
-          <button className="search-button" onClick={searchProducts} >
+          <button className="search-button" onClick={searchProducts} title='Search' >
             <img className="search-icon" src={SearchIcon} />
           </button>
         </div>
