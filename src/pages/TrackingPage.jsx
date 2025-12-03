@@ -8,7 +8,7 @@ import "./TrackingPage.css";
 export function Tracking({ cart }) {
   const { orderId, productId } = useParams();
   const [order, setOrder] = useState(null);
-  console.log(order);
+
   useEffect(() => { 
     const fetchProduct = async () => {
       const response = await axios.get(`api/orders/${orderId}?expand=products`);
@@ -24,14 +24,11 @@ export function Tracking({ cart }) {
   const orderProduct = order.products.find((orderProduct) => {
     return orderProduct.productId === productId;
   });
-  console.log(orderProduct);
 
   const totalDeliveryTimeMs =
     orderProduct.estimatedDeliveryTimeMs - order.orderTimeMs;
-  console.log(totalDeliveryTimeMs)
 
   let timePassedMs = dayjs().valueOf() - order.orderTimeMs;
-  console.log(timePassedMs)
   timePassedMs = totalDeliveryTimeMs * 0.3;
   let deliveryPercent = (timePassedMs / totalDeliveryTimeMs) * 100;
 
